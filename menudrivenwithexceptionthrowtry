@@ -1,0 +1,40 @@
+import java.util.Scanner;
+public class menudriven{
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		// TODO Auto-generated method stub
+		int option;
+		System.out.print("MENU\n1) Arithmetic Exception \n2) Array Index Out Of Bounds Exception\n3) Exit\n");
+	do {
+		System.out.print("\nEnter the option : ");
+		option = input.nextInt();
+		switch(option) {
+		case 1:
+			System.out.println("This is ArithmeticException");
+			try
+			{
+				System.out.println(10/0);
+			}catch(Exception e) {
+				System.out.println(e);
+			}
+			break;
+		case 2:
+			System.out.println("This is ArrayIndexOutOfBoundsException");
+			try {
+				int[] arr = new int[5];
+				arr[6] = 10;
+			} catch(Exception e) {
+				System.out.println(e);
+			}
+			break;
+		case 3:
+			System.out.println("Exiting");
+			break;
+			default:
+				System.out.println("Select a valid option (1 or 2) ");
+		}
+	} while(option != 3); 
+	}
+}
+			
+				
