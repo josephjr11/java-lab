@@ -1,0 +1,141 @@
+import java.util.Scanner;
+public class exceptions {
+String name=null;
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int option;
+		int check = 0;
+		int c,number1,number2,number3;
+		String name=null;
+		String name2="bunnny";
+
+		int arr[]=new int[3];
+
+		Scanner sc=new Scanner(System.in);
+		do {
+		System.out.println("1---Arithmatic exception \n 2---Array out of bond exception \n 3----NULL pointer exception\n 4----String IndexOut Of Bounds Exception \n 5----array format exception");
+		option=sc.nextInt();
+		switch(option) {
+		case 1:
+		try {
+		number1=10;
+		System.out.println("First number---"+number1);
+		number2=0;
+		System.out.println("Second number---"+number2);
+		c=number1/number2;
+		}
+		catch(ArithmeticException e) {
+		System.out.println(e+"is not possible!!");
+		}
+		finally {
+		number1=10;
+		number2=0;
+		number3 =1;
+		c=number1/number3+number2;
+		System.out.println("!!!!!Program is free from exception!!!!!");
+		System.out.println("Result of number1/number3+number2 is "+c);
+		}
+		break;
+
+		case 3:
+		try {
+		int n=name.length();
+		System.out.println("length is "+n);
+		}
+		catch(NullPointerException e ){
+		System.out.println(e);
+		}
+		finally {
+		System.out.println("Enter valid names to string to avoid exception");
+		}
+		break;
+		case 2 :
+		try {
+		arr[6]=10;
+
+		}catch(ArrayIndexOutOfBoundsException e) {
+		System.out.println(e);
+		}
+		finally {
+		System.out.println("exception is mainted");
+
+		}
+		break;
+		case 4:
+		try {
+
+
+		System.out.println("Taking the character at index 6");
+		System.out.println(name2.charAt(6));
+		}
+		catch(StringIndexOutOfBoundsException e) {
+		System.out.println(e);
+		}
+		finally {
+		System.out.println("Length of array is 4 so use values <4");
+		System.out.println(name2.charAt(3));
+		}
+		break;
+		default:
+		System.out.println("enter valid");
+
+
+		}
+		System.out.println("Press--1 to continue and 0--to exit");
+		check=sc.nextInt();
+		}
+		while(check==1);
+
+		}
+		private static char charAt(int i) {
+
+		return 0;
+		}
+		}
+
+
+OUTPUT--
+""1---Arithmatic exception 
+ 2---Array out of bond exception 
+ 3----NULL pointer exception
+ 4----String IndexOut Of Bounds Exception 
+ 5----array format exception
+1
+First number---10
+Second number---0
+java.lang.ArithmeticException: / by zerois not possible!!
+!!!!!Program is free from exception!!!!!
+Result of number1/number3+number2 is 10
+Press--1 to continue and 0--to exit
+1
+1---Arithmatic exception 
+ 2---Array out of bond exception 
+ 3----NULL pointer exception
+ 4----String IndexOut Of Bounds Exception 
+ 5----array format exception
+2
+java.lang.ArrayIndexOutOfBoundsException: Index 6 out of bounds for length 3
+exception is mainted
+Press--1 to continue and 0--to exit
+1
+1---Arithmatic exception 
+ 2---Array out of bond exception 
+ 3----NULL pointer exception
+ 4----String IndexOut Of Bounds Exception 
+ 5----array format exception
+3
+java.lang.NullPointerException: Cannot invoke "String.length()" because "name" is null
+Enter valid names to string to avoid exception
+Press--1 to continue and 0--to exit
+1
+1---Arithmatic exception 
+ 2---Array out of bond exception 
+ 3----NULL pointer exception
+ 4----String IndexOut Of Bounds Exception 
+ 5----array format exception
+4
+Taking the character at index 6
+java.lang.StringIndexOutOfBoundsException: String index out of range: 6
+Length of array is 4 so use values <4
+n
+Press--1 to continue and 0--to exit
